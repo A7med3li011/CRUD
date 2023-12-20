@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+x
+
+</head>
+
+<body class="bg-black">
+    <h1 class="text-light my-5 text-center ">CRUD Managment System</h1>
+    <div class="container">
+
+        <form class="form my-3 text-light">
+            <label class="mb-2" for="nameProduct">Product</label>
+            <input oninput="validateName()" class="form-control mb-2" id="nameProduct">
+            <p class="text-danger d-none invalidNameMessage">invalid name range(3 to 8) char</p>
+            <label class="mb-2" for="priceProduct">price</label>
+            <input oninput="validatePrice()" class="form-control mb-3" id="priceProduct">
+            <p class="text-danger d-none invalidPriceMessage">invalid price range(1000 to 100000)</p>
+
+            <label class="mb-2" for="model">Model</label>
+            <input oninput=" validateModel()" class="form-control mb-3" id="modelProduct">
+            <p class="invalidMproductModelMessage text-danger d-none">invalid model (tv or phone or labtop)</p>
+            <label class="mb-2" for="decProduct">Description</label>
+            <input oninput=" validateDesc()" class="form-control mb-3" id="decProduct">
+            <p class="text-danger d-none invalidMproductDescMessage">invalid discription range(at least 20 char )</p>
+
+            <label class="mb-2" for="count">count</label>
+            <input class="form-control mb-3" id="count">
+        </form>
+        <button onclick="createProduct()" class="btn btn-primary d-block ms-auto px-4  mb-5 add">Add</button>
+        <button onclick="updated()" class="btn btn-warning d-block me-auto px-4  mb-5 d-none update">Update</button>
+        <h3 class="text-light">Search...</h3>
+        <input oninput="search(this.value)" class="form-control mb-5">
+        <button onclick="ClearAllData()" class="btn btn-danger d-block me-auto px-4  mb-2 update">Clear All</button>
+
+    </div>
+    <table class="table text-center container table-dark ">
+        <tr>
+            <th>index</th>
+            <th>product</th>
+            <th>price</th>
+            <th>model</th>
+            <th>productDesc</th>
+            <th>update</th>
+            <th>delete</th>
+
+        </tr>
+        <tbody class="myData">
+
+        </tbody>
+    </table>
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
